@@ -8,7 +8,10 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "start:dev": "npx react-native run-android"
+    "start:dev": "npx react-native run-android",
+    "prebuild": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "clear": "cd android && gradlew clean && cd ../",
+    "build": "cd android && gradlew assembleDebug && cd ../"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.6",
